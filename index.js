@@ -51250,7 +51250,7 @@ class nT extends zs {
   }
 }
 const iT = "/assets/earth_map-deef1197.png",
-  rT = {}.VITE_NODE_ENV !== "production";
+  rT = {}.VITE_NODE_ENV !== "development";
 if (rT) {
   const n = JSON.stringify({
     type: "Map",

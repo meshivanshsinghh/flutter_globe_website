@@ -51249,7 +51249,7 @@ class iT extends ks {
       this.update();
   }
 }
-const rT = "/assets/earth_map-deef1197.png";
+const rT = "./earth_map-deef1197.png";
 let Ts, pi, Ur, Ci, go;
 function sT() {
   (Ts = new R1({ antialias: !0 })),

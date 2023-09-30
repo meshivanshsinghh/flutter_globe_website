@@ -51249,8 +51249,14 @@ class iT extends ks {
       this.update();
   }
 }
-const rT = "./earth_map-deef1197.png";
+const rT = "/assets/earth_map-deef1197.png";
 let Ts, pi, Ur, Ci, go;
+window.updateGlobeFromFlutter = function (n) {
+  const e = JSON.parse(n);
+  sT();
+  const t = aT(e);
+  oT(t, e), bm(), ym();
+};
 function sT() {
   (Ts = new R1({ antialias: !0 })),
     Ts.setPixelRatio(window.devicePixelRatio),
@@ -51336,8 +51342,3 @@ function bm() {
     pi.updateProjectionMatrix(),
     Ts.setSize(window.innerWidth, window.innerHeight);
 }
-window.updateGlobeFromFlutter = function (n) {
-  const e = JSON.parse(n),
-    t = aT(e);
-  sT(), oT(t, e), bm(), ym();
-};

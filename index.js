@@ -51249,7 +51249,7 @@ class nT extends zs {
       this.update();
   }
 }
-const iT = "/assets/earth_map-deef1197.png",
+const iT = "/flutter_globe_website/assets/earth_map-deef1197.png",
   rT = {}.VITE_NODE_ENV !== "production";
 if (rT) {
   const n = JSON.stringify({

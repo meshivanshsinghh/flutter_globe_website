@@ -51249,19 +51249,66 @@ class nT extends zs {
       this.update();
   }
 }
-const iT = "/assets/earth_map-deef1197.png";
+const iT = "/assets/earth_map-deef1197.png",
+  rT = {}.VITE_NODE_ENV !== "production";
+if (rT) {
+  const n = JSON.stringify({
+    type: "Map",
+    maps: [
+      {
+        text: "Berlin MD, USA",
+        size: 1,
+        city: "Berlin MD, USA",
+        lat: 38.3226153,
+        lng: -75.2176892,
+      },
+      {
+        text: "Benidorm Spain",
+        size: 1,
+        city: "Benidorm Spain",
+        lat: 38.5411928,
+        lng: -0.1233831,
+      },
+      {
+        text: "He Hoe Myanmar (Burma)",
+        size: 1,
+        city: "He Hoe Myanmar (Burma)",
+        lat: 20.723192,
+        lng: 96.82170169999999,
+      },
+      {
+        text: "Lucca Province of Lucca, Italy",
+        size: 1,
+        city: "Lucca Province of Lucca, Italy",
+        lat: 43.8429197,
+        lng: 10.5026977,
+      },
+      {
+        text: "Shivamogga Karnataka, India",
+        size: 1,
+        city: "Shivamogga Karnataka, India",
+        lat: 13.9299299,
+        lng: 75.568101,
+      },
+    ],
+  });
+  setTimeout(() => {
+    window.updateGlobeFromFlutter(n);
+  }, 1e3);
+}
 let hr, oi, qr, Ci, ts;
-rT();
+sT();
 window.updateGlobeFromFlutter = function (n) {
   try {
     const e = JSON.parse(n),
-      t = oT(e);
-    sT(t, e), aT(), ym(), console.log("update globe called");
+      t = aT(e);
+    oT(t, e), ym(), console.log("update globe called");
   } catch (e) {
     console.error("Failed to parse data from Flutter:", e);
   }
 };
-function rT() {
+window.addEventListener("resize", AT, !1);
+function sT() {
   if (
     (hr && (document.body.removeChild(hr.domElement), hr.dispose()),
     (hr = new R1({ antialias: !0 })),
@@ -51300,7 +51347,7 @@ function rT() {
   let n = new u8(12303291, 0.3);
   qr.add(n);
 }
-function sT(n, e) {
+function oT(n, e) {
   ts && qr.remove(ts),
     (ts = new eT({ waitForGlobeReady: !0, animateIn: !0 })
       .showAtmosphere(!0)
@@ -51318,7 +51365,7 @@ function sT(n, e) {
   const t = ts.globeMaterial();
   (t.side = Nt), (t.needsUpdate = !0), qr.add(ts);
 }
-function oT(n) {
+function aT(n) {
   const e = [];
   for (let t = 0; t < n.maps.length - 1; t++) {
     const i = n.maps[t],
@@ -51343,7 +51390,7 @@ function ym() {
     hr.render(qr, oi),
     requestAnimationFrame(ym);
 }
-function aT() {
+function AT() {
   (oi.aspect = window.innerWidth / window.innerHeight),
     oi.updateProjectionMatrix(),
     hr.setSize(window.innerWidth, window.innerHeight);

@@ -52139,7 +52139,8 @@ function h9(n) {
     e.dataID &&
     typeof FlutterChannel < "u" &&
     window.FlutterChannel &&
-    window.FlutterChannel.postMessage(e.dataID);
+    (console.log("Sending message to Flutter: ", e.dataID),
+    window.FlutterChannel.postMessage(e.dataID));
 }
 function d9(n) {
   const e = Vm(n);
@@ -52147,7 +52148,8 @@ function d9(n) {
     e.dataID &&
     typeof FlutterChannel < "u" &&
     window.FlutterChannel &&
-    window.FlutterChannel.postMessage(e.dataID);
+    (console.log("Sending message to Flutter: ", e.dataID),
+    window.FlutterChannel.postMessage(e.dataID));
 }
 function Vm(n) {
   let e, t;

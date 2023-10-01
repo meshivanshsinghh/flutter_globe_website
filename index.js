@@ -52039,7 +52039,7 @@ function o9() {
       dynamicDampingFactor: 0.01,
       enablePan: !1,
       minDistance: 200,
-      maxDistance: 800,
+      maxDistance: 500,
       rotateSpeed: 0.8,
       zoomSpeed: 1,
       autoRotate: !1,
@@ -52095,8 +52095,8 @@ function u9(n, e) {
       .arcColor(() => "#ffffff")
       .labelsData(e.maps)
       .labelColor(() => "#ffffff")
-      .labelSize(0.75)
-      .labelResolution(1)
+      .labelSize(0.9)
+      .labelResolution(10)
       .labelAltitude(0)
       .labelIncludeDot(!0)
       .arcStroke(0.25);

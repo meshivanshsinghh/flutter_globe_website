@@ -52000,41 +52000,39 @@ class n9 extends js {
       this.update();
   }
 }
-const i9 = "/flutter_globe_website/assets/earth_map-deef1197.png",
-  r9 = {}.VITE_NODE_ENV !== "production";
+const i9 = "/flutter_globe_website/assets/earth_map-deef1197.png";
 let hr, Ri, _r, vc, ns;
 const g1 = new U8(),
   bu = new ke(),
   _c = [];
-s9();
-r9 && g9();
-function s9() {
-  o9(), a9(), l9(), A9(), u9(), Hm();
+r9();
+function r9() {
+  s9(), o9(), A9(), a9(), l9(), Hm();
 }
 window.updateGlobeFromFlutter = function (n) {
   try {
     const e = JSON.parse(n),
-      t = h9(e);
-    f9(t, e).then(() => {});
+      t = f9(e);
+    c9(t, e).then(() => {});
   } catch (e) {
     console.error("Failed to parse data from Flutter:", e);
   }
 };
-function o9() {
+function s9() {
   (hr = new X1({ antialias: !0 })),
     hr.setPixelRatio(window.devicePixelRatio),
     hr.setSize(window.innerWidth, window.innerHeight),
     document.body.appendChild(hr.domElement),
-    hr.domElement.addEventListener("mousedown", m9, !1),
-    hr.domElement.addEventListener("touchstart", p9, !1),
-    window.addEventListener("resize", d9, !1);
+    hr.domElement.addEventListener("mousedown", p9, !1),
+    hr.domElement.addEventListener("touchstart", d9, !1),
+    window.addEventListener("resize", h9, !1);
 }
-function a9() {
+function o9() {
   (_r = new $5()),
     (_r.background = new Dt(2184323)),
     (_r.fog = new Cc(2184323, 400, 2e3));
 }
-function A9() {
+function a9() {
   (vc = new n9(Ri, hr.domElement)),
     Object.assign(vc, {
       enableDamping: !0,
@@ -52049,14 +52047,14 @@ function A9() {
       maxPolarAngle: Math.PI - Math.PI / 3,
     });
 }
-function l9() {
+function A9() {
   (Ri = new ki()),
     (Ri.aspect = window.innerWidth / window.innerHeight),
     Ri.updateProjectionMatrix(),
     Ri.position.set(0, 0, 460),
     _r.add(Ri);
 }
-function u9() {
+function l9() {
   const n = new O8(12303291, 0.3);
   _r.add(n);
   const e = new Md(16777215, 1);
@@ -52064,7 +52062,7 @@ function u9() {
   const t = new Md(16777215, 1);
   t.position.set(-200, 500, 200), Ri.add(t);
 }
-function c9(n, e, t = 0) {
+function u9(n, e, t = 0) {
   const i = (90 - n) * (Math.PI / 180),
     r = (e + 180) * (Math.PI / 180),
     s = 100 + t,
@@ -52073,7 +52071,7 @@ function c9(n, e, t = 0) {
     h = -s * Math.sin(i) * Math.cos(r);
   return { x: u, y: c, z: h };
 }
-function f9(n, e) {
+function c9(n, e) {
   return new Promise((t) => {
     ns && _r.remove(ns),
       (ns = new e9({ waitForGlobeReady: !0, animateIn: !0 })
@@ -52088,7 +52086,7 @@ function f9(n, e) {
         .pointAltitude(0.03)
         .pointRadius(0.1),
       e.maps.forEach((r) => {
-        const { x: s, y: u, z: c } = c9(r.lat, r.lng, 0),
+        const { x: s, y: u, z: c } = u9(r.lat, r.lng, 0),
           h = new $s(1),
           p = new Zl({ transparent: !0, opacity: 1, color: "#EF7C6D" }),
           g = new wn(h, p);
@@ -52119,7 +52117,7 @@ function f9(n, e) {
       });
   });
 }
-function h9(n) {
+function f9(n) {
   const e = [];
   for (let t = 0; t < n.maps.length - 1; t++) {
     const i = n.maps[t],
@@ -52143,17 +52141,17 @@ function Hm() {
     hr.render(_r, Ri),
     requestAnimationFrame(Hm);
 }
-function d9() {
+function h9() {
   (Ri.aspect = window.innerWidth / window.innerHeight),
     Ri.updateProjectionMatrix(),
     hr.setSize(window.innerWidth, window.innerHeight);
 }
-function p9(n) {
+function d9(n) {
   n.preventDefault();
   const e = Wm(n);
   e && e.dataID && Vm(e.dataID);
 }
-function m9(n) {
+function p9(n) {
   const e = Wm(n);
   e && e.dataID && Vm(e.dataID);
 }
@@ -52171,54 +52169,4 @@ function Wm(n) {
     g1.setFromCamera(bu, Ri);
   const r = g1.intersectObjects(_c, !0);
   return r.length > 0 ? r[0].object : null;
-}
-function g9() {
-  const n = JSON.stringify({
-    type: "Map",
-    maps: [
-      {
-        id: "berlin",
-        text: "Berlin MD, USA",
-        size: 1,
-        city: "Berlin MD, USA",
-        lat: 38.3226153,
-        lng: -75.2176892,
-      },
-      {
-        id: "spain",
-        text: "Benidorm Spain",
-        size: 1,
-        city: "Benidorm Spain",
-        lat: 38.5411928,
-        lng: -0.1233831,
-      },
-      {
-        id: "burma",
-        text: "He Hoe Myanmar (Burma)",
-        size: 1,
-        city: "He Hoe Myanmar (Burma)",
-        lat: 20.723192,
-        lng: 96.82170169999999,
-      },
-      {
-        id: "italy",
-        text: "Lucca Province of Lucca, Italy",
-        size: 1,
-        city: "Lucca Province of Lucca, Italy",
-        lat: 43.8429197,
-        lng: 10.5026977,
-      },
-      {
-        id: "india",
-        text: "Shivamogga Karnataka, India",
-        size: 1,
-        city: "Shivamogga Karnataka, India",
-        lat: 13.9299299,
-        lng: 75.568101,
-      },
-    ],
-  });
-  setTimeout(() => {
-    window.updateGlobeFromFlutter(n);
-  }, 1e3);
 }

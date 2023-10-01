@@ -52007,13 +52007,15 @@ const g1 = new U8(),
   _c = [];
 r9();
 function r9() {
-  s9(), o9(), A9(), a9(), l9(), Hm();
+  s9(), o9(), A9(), a9(), l9();
 }
 window.updateGlobeFromFlutter = function (n) {
   try {
     const e = JSON.parse(n),
       t = f9(e);
-    c9(t, e).then(() => {});
+    c9(t, e).then(() => {
+      console.log("Globe rendered"), Hm();
+    });
   } catch (e) {
     console.error("Failed to parse data from Flutter:", e);
   }

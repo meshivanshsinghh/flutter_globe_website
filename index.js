@@ -52137,19 +52137,21 @@ function h9(n) {
   const e = Vm(n);
   e &&
     e.dataID &&
-    typeof FlutterChannel < "u" &&
-    window.FlutterChannel &&
     (console.log("Sending message to Flutter: ", e.dataID),
-    window.FlutterChannel.postMessage(e.dataID));
+    typeof FlutterChannel < "u" &&
+      window.FlutterChannel &&
+      (console.log("Sending message to Flutter: ", e.dataID),
+      window.FlutterChannel.postMessage(e.dataID)));
 }
 function d9(n) {
   const e = Vm(n);
   e &&
     e.dataID &&
-    typeof FlutterChannel < "u" &&
-    window.FlutterChannel &&
     (console.log("Sending message to Flutter: ", e.dataID),
-    window.FlutterChannel.postMessage(e.dataID));
+    typeof FlutterChannel < "u" &&
+      window.FlutterChannel &&
+      (console.log("Sending message to Flutter: ", e.dataID),
+      window.FlutterChannel.postMessage(e.dataID)));
 }
 function Vm(n) {
   let e, t;

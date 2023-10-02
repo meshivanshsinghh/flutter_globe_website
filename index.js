@@ -52048,10 +52048,10 @@ function a9() {
       dynamicDampingFactor: 0.01,
       enablePan: !1,
       minDistance: 200,
-      maxDistance: 500,
+      maxDistance: 550,
       rotateSpeed: 0.8,
       zoomSpeed: 1,
-      autoRotate: !0,
+      autoRotate: !1,
       minPolarAngle: Math.PI / 5,
       maxPolarAngle: Math.PI - Math.PI / 3,
     });
@@ -52060,7 +52060,7 @@ function A9() {
   (Ri = new ki()),
     (Ri.aspect = window.innerWidth / window.innerHeight),
     Ri.updateProjectionMatrix(),
-    Ri.position.set(0, 0, 460),
+    Ri.position.set(0, 0, 400),
     _r.add(Ri);
 }
 function l9() {
